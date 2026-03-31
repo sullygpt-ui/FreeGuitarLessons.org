@@ -41,6 +41,45 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <script dangerouslySetInnerHTML={{ __html: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${gaId}');` }} />
           </>
         )}
+        <script dangerouslySetInnerHTML={{ __html: `
+          // Track signalsmusic.studio outbound clicks
+          document.addEventListener('DOMContentLoaded', function() {
+            function trackSignalsMusicClick(url) {
+              const data = {
+                timestamp: new Date().toISOString(),
+                url: url,
+                referrer: window.location.href,
+                userAgent: navigator.userAgent.substring(0, 200),
+                site: 'freeguitarlessons.org'
+              };
+              
+              // Send to analytics as custom event if gtag exists
+              if (typeof gtag === 'function') {
+                gtag('event', 'outbound_click', {
+                  event_category: 'signalsmusic_affiliate',
+                  event_label: url,
+                  transport_type: 'beacon'
+                });
+              }
+              
+              // Also try to log to our tracking endpoint
+              fetch('/api/track-outbound', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data),
+                keepalive: true
+              }).catch(() => {}); // Silent fail if endpoint doesn't exist
+            }
+            
+            // Track all signalsmusic.studio links
+            document.addEventListener('click', function(e) {
+              const link = e.target.closest('a');
+              if (link && link.href && link.href.includes('signalsmusic.studio')) {
+                trackSignalsMusicClick(link.href);
+              }
+            });
+          });
+        ` }} />
       </head>
       <body className="min-h-screen flex flex-col">
         <Header />
