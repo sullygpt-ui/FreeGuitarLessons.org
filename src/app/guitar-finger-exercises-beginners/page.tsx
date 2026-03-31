@@ -40,7 +40,7 @@ export default function GuitarFingerExercisesBeginnersPage() {
         {/* Introduction */}
         <div className="bg-green-50 border-l-4 border-green-400 p-6 mb-8 rounded-r-lg">
           <p className="text-lg text-green-800 font-medium mb-2">
-            What You'll Learn:
+            What You&apos;ll Learn:
           </p>
           <ul className="text-green-700 space-y-1">
             <li>• Step-by-step techniques for complete guide to guitar finger exercises for beginners</li>
@@ -57,13 +57,13 @@ export default function GuitarFingerExercisesBeginnersPage() {
               Getting Started
             </h2>
             <p className="text-lg text-gray-700 mb-4">
-              Whether you're new to guitar or looking to expand your skills, complete guide to guitar finger exercises for beginners is an essential technique that will transform your playing. Let's dive into the fundamentals.
+              Whether you&apos;re new to guitar or looking to expand your skills, complete guide to guitar finger exercises for beginners is an essential technique that will transform your playing. Let&apos;s dive into the fundamentals.
             </p>
             
             <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4 mb-6">
               <h4 className="font-semibold text-yellow-800 mb-2">🎯 Quick Tip</h4>
               <p className="text-yellow-700 text-sm">
-                Before diving into advanced techniques, make sure you're comfortable with basic chord shapes and have your guitar properly tuned.
+                Before diving into advanced techniques, make sure you&apos;re comfortable with basic chord shapes and have your guitar properly tuned.
               </p>
             </div>
           </section>
@@ -103,7 +103,7 @@ export default function GuitarFingerExercisesBeginnersPage() {
             </h2>
             <div className="grid md:grid-cols-2 gap-6">
               <div className="bg-red-50 border border-red-200 rounded-lg p-4">
-                <h4 className="font-semibold text-red-800 mb-2">❌ Don't Rush</h4>
+                <h4 className="font-semibold text-red-800 mb-2">❌ Don&apos;t Rush</h4>
                 <p className="text-red-700 text-sm">
                   Many players try to play too fast too soon. Start slowly and build muscle memory.
                 </p>
